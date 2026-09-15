@@ -33,7 +33,7 @@ const BADGE = {
 } as const;
 
 const HOST = {
-  src: "/brand/kpl-host-portrait.png",
+  src: "/brand/kpl-host-portrait.webp",
   width: 1086,
   height: 1448,
 } as const;
@@ -355,28 +355,6 @@ export function LandingHero() {
         >
           <HeroSocialRail />
         </motion.div>
-
-        {isTe ? (
-          <motion.p
-            className="pointer-events-none absolute top-[20%] left-[2%] z-20 hidden max-w-[18%] rotate-[-8deg] text-left text-[clamp(0.65rem,1.5vw,1rem)] font-bold leading-tight text-[#2B2626] xl:block"
-            initial={reduce ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.35 }}
-          >
-            <span className="inline-block bg-[#FFFF00]/92 px-1.5 py-1">
-              {hero.leftTagline}
-            </span>
-          </motion.p>
-        ) : (
-          <motion.p
-            className="font-script pointer-events-none absolute top-[18%] left-[3%] z-20 hidden max-w-[22%] text-left text-[clamp(1.1rem,2.4vw,2rem)] leading-none text-[#FFFF00] drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] xl:block"
-            initial={reduce ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.35 }}
-          >
-            {hero.leftTagline}
-          </motion.p>
-        )}
 
         <motion.p
           className={cn(
