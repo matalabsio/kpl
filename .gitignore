@@ -1,8 +1,6 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
+# --- dependencies ---
+node_modules/
+.pnp
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -10,32 +8,65 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
+# --- next.js ---
+.next/
+out/
+build/
+dist/
 
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
+# --- env / secrets (keep .env.example) ---
+.env
+.env.*
+!.env.example
 *.pem
+credentials.json
+service-account*.json
+*-key.json
+**/secrets/
 
-# debug
+# --- vercel / deploy ---
+.vercel
+
+# --- typescript / tooling ---
+*.tsbuildinfo
+next-env.d.ts
+.eslintcache
+.turbo/
+coverage/
+
+# --- debug logs ---
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.log
 
-# env files (can opt-in for committing if needed)
-.env*
+# --- os / editors ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+*.swo
+*~
 
-# vercel
-.vercel
+# --- python (local skill scripts) ---
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# --- cursor local ---
+.cursor/
+
+# --- local scratch / reference images (not public assets) ---
+/image.png
+/image copy.png
+/image copy *.png
+/image copy*.png
+/headShoot.png
+/*.annotation.png
